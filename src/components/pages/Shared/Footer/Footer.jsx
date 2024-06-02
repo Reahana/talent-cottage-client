@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import logo from '../../../../assets/logo.png'
 
 const Footer = () => {
     return (
@@ -8,7 +9,8 @@ const Footer = () => {
             <Container fluid  >
                 <Row >
                     <Col sm={12} md={3}>
-                        <h1>Talent Cottage</h1>
+                        <img src={logo}/>
+                        
                     </Col>
                     <Col  sm={12} md={3}>Site Map</Col>
                     <Col  sm={12} md={3}>Get in Touch</Col>
