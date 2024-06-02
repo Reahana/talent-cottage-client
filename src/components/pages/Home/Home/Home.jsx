@@ -12,7 +12,7 @@ const Home = () => {
             </Helmet>
             This is home page
             <Banner></Banner>
-            <h1 className='fs-1 fw-bold text-center my-5'> Our Top Courses</h1>
+            <h1 className='fs-1 fw-bold text-center '> Our Top Courses</h1>
             <CourseSection></CourseSection>
             <InstructorSection></InstructorSection>
         </div>
