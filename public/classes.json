@@ -1,0 +1,72 @@
+[
+    {
+      "_id": "A12345",
+      "name": "Front-End Web Development with React",
+      "image": "https://www.achieversit.com/management/uploads/course_image/react-img222.png",
+      "instructor_name": "Nahid ",
+      "instructor_email": "nahid@talent.com",
+      "seats": 15,
+      "price": 150.00,
+      "students":2
+    },
+    {
+      "_id": "B23456",
+      "name": "Back End with PHP",
+      "image": "https://s3.amazonaws.com/coursesity-blog/2019/01/php-1.png",
+      "instructor_name": "Reahana",
+      "instructor_email": "reahana@talent.com",
+      "seats": 12,
+      "price": 200.00,
+      "students":1
+    },
+    {
+      "_id": "C34567",
+      "name": "Cybersecurity Fundamentals",
+      "image": "https://www.british-assessment.co.uk/app/uploads/2021/07/Cyber-Security-Course-%E2%80%93-Awareness-Training_1.jpg",
+      "instructor_name": "Nahid",
+      "instructor_email": "nahid@talent.com",
+      "seats": 18,
+      "price": 180.00,
+      "students":3
+    },
+    {
+        "_id": "D45678",
+        "name": "Back-End Web Development with Node.js",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw0uM3M25tDITF6GSHpe8TyNDGPKujgzWXkg&s",
+        "instructor_name": "Amanda",
+        "instructor_email": "amanda@talent.com",
+        "seats": 20,
+        "price": 140.00,
+        "students":5
+      },
+      {
+        "_id": "E56789",
+        "name": "Introduction to LARAVEL framework",
+        "image": "https://i.ytimg.com/vi/AGE3wRKljkw/mqdefault.jpg",
+        "instructor_name": "Reahana",
+        "instructor_email": "reahana@talent.com",
+        "seats": 14,
+        "price": 160.00,
+        "students":0
+      },
+      {
+        "_id": "F67890",
+        "name": "Mastering SQA",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReISQ8BG7_rQ3N6AjUudgDc4y6lUN4Qdh-vA&s",
+        "instructor_name": "Asrafi",
+        "instructor_email": "asrafi@talent.com",
+        "seats": 16,
+        "price": 175.00,
+        "students":0
+      },
+      {
+        "_id": "G78901",
+        "name": "Advance Digital Marketing",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJKVPSpPVkPeWJa3oODq7A1i5oD19WwEjxgA&s",
+        "instructor_name": "Asrafi",
+        "instructor_email": "asrafi@talent.com",
+        "seats": 11,
+        "price": 190.00,
+        "students":4
+      }
+]

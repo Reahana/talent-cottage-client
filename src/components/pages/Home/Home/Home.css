@@ -1,0 +1,40 @@
+.popular-class-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+    
+}
+.card-min-height{
+    min-height: 500px;
+    
+}
+.popular-instructor-container{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 40px;
+    
+}
+.all-class-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+    
+}
+.instructor-container{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 40px;
+    
+}
+
+@media (max-width: 768px) { 
+    .popular-class-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 20px;
+        
+    }
+    
+ }
+ 
+ 
