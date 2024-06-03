@@ -1,11 +1,15 @@
 import React from 'react';
 import useAllClass from '../../hooks/useAllClass';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 
 const Course = () => {
     const [allClasses]= useAllClass();
     return (
         <>
+         <Helmet>
+                <title>Talent Cottage | Courses </title>
+            </Helmet>
             <Container fluid className='mb-5' >
                 <Row>
                 {

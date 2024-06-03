@@ -1,11 +1,15 @@
 import React from 'react';
 import useAllInstructor from '../../hooks/useAllInstructor';
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 
 const Instructor = () => {
     const [allInstructors]= useAllInstructor();
     return (
         <div>
+            <Helmet>
+                <title>Talent Cottage | Instructors</title>
+            </Helmet>
             <Container fluid className='my-5'>
                 <Row>
                     {
