@@ -27,7 +27,7 @@ const Header = () => {
                         <Nav.Link href="#link">Dashboard</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Link>
+                        <Link to='/login'>
                             <Button variant='light'>Login</Button>
                         </Link>
                     </Nav>
