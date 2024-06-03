@@ -22,7 +22,7 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="#link">Course</Nav.Link>
+                        <Nav.Link href="/courses">Course</Nav.Link>
                         <Nav.Link href="#home">Instructor</Nav.Link>
                         <Nav.Link href="#link">Dashboard</Nav.Link>
                     </Nav>
