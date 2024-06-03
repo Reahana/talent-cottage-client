@@ -8,7 +8,7 @@ const CourseSection = () => {
     
     return (
         <div>
-             <Container fluid>
+             <Container fluid className='mb-5'>
                 <Row >
                      {
                         topClasses.map( cls=>
