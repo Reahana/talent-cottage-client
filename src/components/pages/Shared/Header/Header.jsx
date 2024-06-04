@@ -3,10 +3,15 @@ import { Button, Container, Nav, NavDropdown, Navbar,Image } from 'react-bootstr
 import { Link,useNavigate } from 'react-router-dom';
 import logo from '../../../../assets/logo.png'
 import useAuth from '../../../hooks/useAuth'
+import useAdmin from '../../../hooks/useAdmin';
+import useInstructor from '../../../hooks/useInstructor';
 
 const Header = () => {
     const {user ,logOut}= useAuth();
+const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     const navigate = useNavigate();
+
     const handleLogOut = () => {
       logOut()
           .then(() => { })
@@ -34,7 +39,11 @@ const Header = () => {
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/courses">Course</Nav.Link>
                         <Nav.Link href="/instructors">Instructor</Nav.Link>
-                        <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+                        
+                       { user && isAdmin && <Link to="/dashboard/adminHome">Dashboard A</Link>}
+                    {user &&  isInstructor && <Link to="/dashboard/instructorHome">Dashboard I</Link> }
+                        { user &&  !isAdmin && !isInstructor && <Link to="/dashboard/studentHome">Dashboard</Link> }
+
                     </Nav>
                     <Nav>
                         {
