@@ -2,13 +2,37 @@ import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link,useLocation, useNavigate  } from 'react-router-dom';
+import Swal from 'sweetalert2'
+import  useAuth  from "../../hooks/useAuth";
 
 const Login = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const {signIn}= useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    const onSubmit = data => {}
+    const from = location.state?.from?.pathname || "/";
+
+    const onSubmit = data => {
+        console.log(data);
+        signIn(data.email, data.password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            Swal.fire({
+                title: 'User Login Successful.',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
+            navigate(from, { replace: true });
+        })
+    }
 
     return (
         <div>

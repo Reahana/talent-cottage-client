@@ -12,13 +12,13 @@ const CourseSection = () => {
                 <Row >
                      {
                         topClasses.map( cls=>
-                            <Col className='g-5' sm={12} md={6} lg={4}>
+                            <Col className='g-5' sm={12} md={6} lg={4} key={cls._id}>
                                 <Card className='card-min-height' >
                                     <Card.Img variant="top" src={cls.image} height={'200px'} />
                                     <Card.Body>
                                         <Card.Title className='fs-1'>{cls.name}</Card.Title>
                                         <Card.Text>
-                                            <h2 className='text-primary'>Instructor: {cls.instructor_name}</h2>  
+                                            <Card.Title  className='text-primary fs-4'>Instructor: {cls.instructor_name}</Card.Title>  
                                         </Card.Text>
                                     </Card.Body>
                                     <Card.Footer>

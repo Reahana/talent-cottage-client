@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { AuthContext } from '../../../providers/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Register = () => {
 
@@ -13,7 +14,7 @@ const Register = () => {
     const navigate = useNavigate();
     const axios = useAxiosPublic()
 
-    const onSubmit = data => {
+    const onSubmit = (data) => {
         console.log(data)
         createUser(data.email, data.password)
         .then(result => {
@@ -24,23 +25,27 @@ const Register = () => {
 
                 .then(() => {
                     const savedUser = {name: data.name, email: data.email, photo: data.photoURL }
-                    const res=  axios.post('/users',savedUser)
-                    if (res.data.insertedId) {
+                    console.log(savedUser);
+                    const userRes=  axios.post('/users', savedUser)
+                    console.log(data);
+                    if (data.insertedId) {
                         reset();
                         Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: 'User created successfully.',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
+                            title: 'User Created Successful.',
+                            showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                            }
+                        });
                         }
-                    navigate('/');
+                    
 
                 })
                 .catch(error => console.log(error))
 
-
+                navigate('/');
         })
     }
 

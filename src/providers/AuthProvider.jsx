@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword,getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import useAxiosPublic from '../components/hooks/useAxiosPublic';
 import app from '../firebase/firebase.config';
 
@@ -45,20 +45,20 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            // if (currentUser) {
-            //     // get token and store client
-            //     const userInfo = { email: currentUser.email };
-            //    axios.post('/jwt', userInfo)
-            //         .then(data => {
+            if (currentUser) {
+                // get token and store client
+                const userInfo = { email: currentUser.email };
+               axios.post('/jwt', userInfo)
+                    .then(data => {
                        
-            //                 localStorage.setItem('access-token', data.data.token);
-            //                 setLoading(false);
-            //         })
-            // }
-            // else {
-            //     // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
-            //     localStorage.removeItem('access-token');
-            // }
+                            localStorage.setItem('cottage-token', data.data.token);
+                            setLoading(false);
+                    })
+            }
+            else {
+
+                localStorage.removeItem('cottage-token');
+            }
           
         });
         return () => {

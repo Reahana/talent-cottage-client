@@ -10,14 +10,12 @@ const InstructorSection = () => {
            <Row >
                 {
                    allInstructors.map( i=>
-                       <Col className='g-5' sm={12} md={6} lg={4}>
+                       <Col className='g-5' sm={12} md={6} lg={4} key={i._id}>
                            <Card  >
-                               <Card.Img variant="top" src={i.image} height={'200px'} rounded/>
+                               <Card.Img variant="top" src={i.image} height={'200px'} />
                                <Card.Body>
                                    <Card.Title className='fs-1 text-center'>{i.instructor_name}</Card.Title>
-                                   {/* <Card.Text>
-                                       <h2 className='text-primary'>Instructor: {cls.instructor_name}</h2>  
-                                   </Card.Text> */}
+                                   
                                </Card.Body>
                              
                            </Card>

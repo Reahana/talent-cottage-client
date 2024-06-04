@@ -1,9 +1,19 @@
 import React from 'react';
-import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Container, Nav, NavDropdown, Navbar,Image } from 'react-bootstrap';
+import { Link,useNavigate } from 'react-router-dom';
 import logo from '../../../../assets/logo.png'
+import useAuth from '../../../hooks/useAuth'
 
 const Header = () => {
+    const {user ,logOut}= useAuth();
+    const navigate = useNavigate();
+    const handleLogOut = () => {
+      logOut()
+          .then(() => { })
+          .catch(error => console.log(error));
+          navigate('/');
+  }
+
     return (
         <div>
             <Navbar expand="lg" bg="dark" data-bs-theme="dark">
@@ -27,9 +37,17 @@ const Header = () => {
                         <Nav.Link href="#link">Dashboard</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Link to='/login'>
-                            <Button variant='light'>Login</Button>
-                        </Link>
+                        {
+                            user ? <>
+                            
+                            <Image src={user?.photoURL} alt="" width={'50px'} height={'50px'}  roundedCircle/> {' '}
+                                <Button onClick={handleLogOut} variant='dark' >LogOut</Button>
+                            </> : <>
+                                <Link to='/login'>
+                                    <Button variant='light' >Login</Button>
+                                </Link>
+                            </>
+                        }
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
