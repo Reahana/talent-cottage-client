@@ -5,6 +5,7 @@ import Course from "../components/pages/Course/Course";
 import Instructor from "../components/pages/Instructor/Instructor";
 import Login from "../components/pages/Login/Login";
 import Register from "../components/pages/Register/Register";
+import Dashboard from "../components/layout/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,13 @@ const router = createBrowserRouter([
         },
       ],
     },
+    {
+      path: "dashboard",
+      element: <Dashboard></Dashboard>,
+      children:[
+
+      ]
+    }
   ]);
 
   export default router;
