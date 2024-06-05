@@ -10,7 +10,7 @@ const InstructorSection = () => {
            <Row >
                 {
                    allInstructors.map( i=>
-                       <Col className='g-5' sm={12} md={6} lg={4} key={i._id}>
+                       <Col className='g-5' sm={12} md={6} lg={3} key={i._id}>
                            <Card  >
                                <Card.Img variant="top" src={i.image} height={'200px'} />
                                <Card.Body>

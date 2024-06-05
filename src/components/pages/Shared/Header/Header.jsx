@@ -5,6 +5,8 @@ import logo from '../../../../assets/logo.png'
 import useAuth from '../../../hooks/useAuth'
 import useAdmin from '../../../hooks/useAdmin';
 import useInstructor from '../../../hooks/useInstructor';
+import ActiveLink from '../ActiveLink/ActiveLink';
+import './Header.css'
 
 const Header = () => {
     const {user ,logOut}= useAuth();
@@ -36,13 +38,13 @@ const [isAdmin] = useAdmin();
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/courses">Course</Nav.Link>
-                        <Nav.Link href="/instructors">Instructor</Nav.Link>
+                        <ActiveLink to="/">Home</ActiveLink>
+                        <ActiveLink to="/courses">Course</ActiveLink>
+                        <ActiveLink to="/instructors">Instructor</ActiveLink>
                         
-                       { user && isAdmin && <Link to="/dashboard/adminHome">Dashboard A</Link>}
-                    {user &&  isInstructor && <Link to="/dashboard/instructorHome">Dashboard I</Link> }
-                        { user &&  !isAdmin && !isInstructor && <Link to="/dashboard/studentHome">Dashboard</Link> }
+                       { user && isAdmin && <ActiveLink to="/dashboard/adminHome">Dashboard </ActiveLink>}
+                    {user &&  isInstructor && <ActiveLink to="/dashboard/instructorHome">Dashboard </ActiveLink> }
+                        { user &&  !isAdmin && !isInstructor && <ActiveLink to="/dashboard/studentHome">Dashboard</ActiveLink> }
 
                     </Nav>
                     <Nav>

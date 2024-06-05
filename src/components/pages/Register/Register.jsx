@@ -81,13 +81,7 @@ const Register = () => {
                                 {errors.password?.type === 'pattern' && <p className="text-danger">Password must have one Uppercase , one lowercase and one special character.</p>}
                 </Form.Group>
 
-                <Form.Group className="mb-3" >
-                    <Form.Label> Confirm Password</Form.Label>
-                    <Form.Control type="password" {...register('confirmPassword', {
-            required: true,
-          })} name='confirmPassword' placeholder="Confirm Password" />
-                
-                </Form.Group>
+               
 
                 <Form.Group className="mb-3" >
                     <Form.Label>Photo URL</Form.Label>

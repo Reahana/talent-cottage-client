@@ -5,7 +5,7 @@ import logo from '../../../../assets/logo.png'
 
 const Footer = () => {
     return (
-        <div className='bg-dark text-white py-3'>
+        <div className=' text-white py-3' style={{backgroundColor:'#000000'}}>
             <Container fluid  >
                 <Row >
                     <Col sm={12} md={3}>

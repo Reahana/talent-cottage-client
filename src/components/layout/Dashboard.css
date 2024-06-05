@@ -1,0 +1,13 @@
+.sideNav a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+     padding: 5px 0px 5px 10px
+    }
+.bg{
+background-color: #f62681;
+}
+
+.text{
+    color: #f62681;
+}

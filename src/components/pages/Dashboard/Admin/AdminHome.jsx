@@ -5,8 +5,8 @@ const AdminHome = () => {
     const {user} =useAuth();
     return (
         <div>
-            <h1 className='mt-3'>Admin Dashboard</h1>
-            <h3>Welcome </h3>
+            <h1 className='mt-3 text-center text'>Admin Dashboard</h1>
+            <h3>Welcome {user.displayName}</h3>
         </div>
     );
 };
