@@ -13,12 +13,13 @@ import InstructorRoute from "./InstructorRoute";
 import InstructorHome from "../components/pages/Dashboard/Instructor/InstructorHome";
 import PrivateRoute from "./PrivateRoute";
 import StudentHome from "../components/pages/Dashboard/Student/StudentHome";
+import ErrorPage from "../components/404/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root />,
-      //errorElement: <ErrorPage />,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: "/",
@@ -45,6 +46,7 @@ const router = createBrowserRouter([
     {
       path: "dashboard",
       element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      errorElement: <ErrorPage />,
       children:[
         {
           path: "adminHome",
