@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link,useLocation, useNavigate  } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import  useAuth  from "../../hooks/useAuth";
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -65,7 +66,7 @@ const Login = () => {
            
             </Link> </p>
            
-           {/* <SocialLogin></SocialLogin> */}
+           <SocialLogin></SocialLogin>
          </Container>
         </div>
     );

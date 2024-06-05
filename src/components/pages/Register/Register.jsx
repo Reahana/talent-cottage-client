@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Swal from 'sweetalert2'
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Register = () => {
 
@@ -100,7 +101,7 @@ const Register = () => {
          </Link></p>
            
            
-           {/* <SocialLogin></SocialLogin> */}
+           <SocialLogin></SocialLogin>
           
            
         </Container>
