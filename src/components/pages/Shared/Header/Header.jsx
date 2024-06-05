@@ -39,6 +39,7 @@ const [isAdmin] = useAdmin();
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
                         <ActiveLink to="/">Home</ActiveLink>
+                        <ActiveLink to="/about">About</ActiveLink>
                         <ActiveLink to="/courses">Course</ActiveLink>
                         <ActiveLink to="/instructors">Instructor</ActiveLink>
                         

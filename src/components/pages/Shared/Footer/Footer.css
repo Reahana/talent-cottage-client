@@ -1,0 +1,15 @@
+li{
+   list-style:none;
+   font-size: 18px
+}
+a{
+    text-decoration: none;
+    color:lightPink;
+}
+a:hover{
+    color: whitesmoke;
+    text-decoration:underline;
+}
+.address p{
+    font-size:16px
+}
