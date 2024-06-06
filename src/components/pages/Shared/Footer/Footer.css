@@ -6,10 +6,7 @@ a{
     text-decoration: none;
     color:lightPink;
 }
-a:hover{
-    color: whitesmoke;
-    text-decoration:underline;
-}
+
 .address p{
     font-size:16px
 }
