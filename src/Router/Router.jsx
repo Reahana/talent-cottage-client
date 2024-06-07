@@ -17,6 +17,8 @@ import ErrorPage from "../components/404/ErrorPage";
 import MySelectedCourse from "../components/pages/Dashboard/Student/MySelectedCourse";
 import MyClasses from "../components/pages/Dashboard/Instructor/MyClasses";
 import AddCourse from "../components/pages/Dashboard/Instructor/AddCourse";
+import ManageClass from "../components/pages/Dashboard/Admin/ManageClass";
+import Payment from "../components/pages/Dashboard/Student/Payment/Payment";
 
 const router = createBrowserRouter([
     {
@@ -60,6 +62,10 @@ const router = createBrowserRouter([
         element: <AdminRoute><ManageUser></ManageUser></AdminRoute>
         },
         {
+          path: "manageCourse",
+        element: <AdminRoute><ManageClass></ManageClass></AdminRoute>
+        },
+        {
           path: "instructorHome",
         element: <InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
         },
@@ -78,7 +84,11 @@ const router = createBrowserRouter([
         {
           path:"selectedCourse",
           element:<PrivateRoute><MySelectedCourse></MySelectedCourse></PrivateRoute>
-        }
+        },
+        {
+          path:"payment",
+          element:<PrivateRoute><Payment></Payment></PrivateRoute>
+        },
       ]
     }
   ]);

@@ -3,12 +3,16 @@ import useAllClass from '../../hooks/useAllClass';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import useCart from '../../hooks/useCart';
+import useAdmin from '../../hooks/useAdmin';
 import useAuth from '../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import useInstructor from '../../hooks/useInstructor';
 
 const Course = () => {
+    const [isAdmin]= useAdmin();
+    const [isInstructor]= useInstructor();
     const [allClasses]= useAllClass();
     const {_id, name ,image,instructor_name,seats,price} = allClasses;
     const [,refetch]= useCart();
@@ -92,7 +96,16 @@ const Course = () => {
                                         </Card.Text>
                                     </Card.Body>
                                     <Card.Footer>
-                                    <Button  onClick={()=> handleSelect(cls)} className='btn btn-lg '  variant="success">select</Button>  
+
+                                 { isAdmin || isInstructor ?
+                                       <Button  disabled 
+                                       className='btn btn-lg '  variant="secondary">
+                                           SELECT</Button>  : 
+                                    <Button  onClick={()=> handleSelect(cls)} 
+                                    className='btn btn-lg '  variant="success">
+                                        SELECT</Button>
+                                 }
+                                   
                                     </Card.Footer>
                                 </Card>
                 

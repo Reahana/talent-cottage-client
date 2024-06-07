@@ -27,7 +27,7 @@ const Dashboard = () => {
                         <Col xs={2} className=" border-right bg  " style={{minHeight: '50vh'}}>
                             <Nav className="flex-column pt-5 sideNav" >
                                 <ActiveLink  to='/dashboard/adminHome' ><FaHouse /> Dashboard</ActiveLink> <br/>
-                                <ActiveLink  to='/dashboard/manageClass' > <FaChalkboard /> Manage Classes</ActiveLink><br/>
+                                <ActiveLink  to='/dashboard/manageCourse' > <FaChalkboard /> Manage Course</ActiveLink><br/>
                                 <ActiveLink to='/dashboard/manageUser' ><FaUsers/> Manage Users</ActiveLink>
 
                             </Nav>

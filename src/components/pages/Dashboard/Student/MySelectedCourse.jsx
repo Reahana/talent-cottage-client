@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { Button, Table } from 'react-bootstrap';
 import { FaTrashAlt } from 'react-icons/fa';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { Link } from 'react-router-dom';
 
 const MySelectedCourse = () => {
     const [cart,refetch]= useCart();
@@ -40,7 +41,9 @@ const MySelectedCourse = () => {
             <div className='d-flex justify-content-between mb-3 mt-3' >
                 <h1>Selected Classes: {cart.length}</h1>
                 
-                <Button className='fs-4' variant='warning'>Pay</Button>
+               <Link to='/dashboard/payment'>
+               <Button className='fs-4' variant='warning'>Pay</Button>
+               </Link>
             </div>
              <Table  bordered hover>
                 <thead>
