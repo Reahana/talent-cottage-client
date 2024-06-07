@@ -10,7 +10,7 @@ const Home = () => {
             <Helmet>
                 <title>Talent Cottage | Home</title>
             </Helmet>
-            This is home page
+          
             <Banner></Banner>
             <h1 className='fs-1 fw-bold text-center'> Our Top Courses</h1>
             <CourseSection></CourseSection>

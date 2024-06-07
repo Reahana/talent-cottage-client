@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <div className=' text-white py-3 ' style={{backgroundColor:'#000000'}}>
             <Container fluid  >
-                <Row >
+                <Row className='pt-4'>
                     <Col sm={12} md={3}>
                         <img src={logo}/>
                         
