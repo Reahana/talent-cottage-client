@@ -14,6 +14,8 @@ import InstructorHome from "../components/pages/Dashboard/Instructor/InstructorH
 import PrivateRoute from "./PrivateRoute";
 import StudentHome from "../components/pages/Dashboard/Student/StudentHome";
 import ErrorPage from "../components/404/ErrorPage";
+import MySelectedCourse from "../components/pages/Dashboard/Student/MySelectedCourse";
+import MyClasses from "../components/pages/Dashboard/Instructor/MyClasses";
 
 const router = createBrowserRouter([
     {
@@ -61,8 +63,16 @@ const router = createBrowserRouter([
         element: <InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
         },
         {
+          path: "myClass",
+        element: <InstructorRoute><MyClasses></MyClasses></InstructorRoute>
+        },
+        {
           path:"studentHome",
           element:<PrivateRoute><StudentHome></StudentHome></PrivateRoute>
+        },
+        {
+          path:"selectedCourse",
+          element:<PrivateRoute><MySelectedCourse></MySelectedCourse></PrivateRoute>
         }
       ]
     }
