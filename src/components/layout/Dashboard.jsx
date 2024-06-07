@@ -36,8 +36,8 @@ const Dashboard = () => {
                        <Col xs={2}  className="bg border-right" style={{minHeight: '50vh'}}>
                             <Nav className="flex-column sideNav pt-5">
                                 <ActiveLink  to='/dashboard/instructorHome' ><FaHouse /> Dashboard</ActiveLink> <br />
-                                <ActiveLink  to='/dashboard/addClass' ><FaChalkboard /> Add a Class</ActiveLink> <br />
-                                <ActiveLink to='/dashboard/myClass' ><FaBookOpenReader />  My Classes</ActiveLink>
+                                <ActiveLink  to='/dashboard/addCourse' ><FaChalkboard /> Add a Course</ActiveLink> <br />
+                                <ActiveLink to='/dashboard/myClass' ><FaBookOpenReader />  My Course</ActiveLink>
                                 
                             </Nav>
                         </Col> :

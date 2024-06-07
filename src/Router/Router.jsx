@@ -16,6 +16,7 @@ import StudentHome from "../components/pages/Dashboard/Student/StudentHome";
 import ErrorPage from "../components/404/ErrorPage";
 import MySelectedCourse from "../components/pages/Dashboard/Student/MySelectedCourse";
 import MyClasses from "../components/pages/Dashboard/Instructor/MyClasses";
+import AddCourse from "../components/pages/Dashboard/Instructor/AddCourse";
 
 const router = createBrowserRouter([
     {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
         {
           path: "myClass",
         element: <InstructorRoute><MyClasses></MyClasses></InstructorRoute>
+        },
+        {
+          path: "addCourse",
+        element: <InstructorRoute><AddCourse></AddCourse></InstructorRoute>
         },
         {
           path:"studentHome",
