@@ -29,7 +29,7 @@ const Footer = () => {
                        
                        <p> <FaPhone /> +880121954231</p>
                        <p> <FaEnvelope /> contact@talentcottage.com</p>
-                       <p><FaLocationDot /> 100, Dhaka, Bangladesh</p>
+                       <p><FaLocationDot /> 10/1, Dhaka, Bangladesh</p>
                        
                     </Col>
                     <Col  sm={12} md={3} className='text-center'>
