@@ -12,7 +12,7 @@ const InstructorSection = () => {
                    allInstructors.map( i=>
                        <Col className='g-5' sm={12} md={6} lg={3} key={i._id}>
                            <Card  >
-                               <Card.Img variant="top" src={i.image} height={'200px'} />
+                               <Card.Img variant="top" src={i.img} height={'200px'} />
                                <Card.Body>
                                    <Card.Title className='fs-1 text-center'>{i.instructor_name}</Card.Title>
                                    

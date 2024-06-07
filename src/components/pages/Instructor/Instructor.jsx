@@ -21,11 +21,11 @@ const Instructor = () => {
 
                             <Col className='g-5' sm={12} md={6} lg={3}>
                                 <Card >
-                                    <Card.Img variant="top" src={i.image} height={'200px'} />
+                                    <Card.Img variant="top" src={i.img} height={'200px'} />
                                     <Card.Body>
                                     <Card.Title  className='fs-2'>  {i.instructor_name}</Card.Title>
                                     <Card.Title > Email: {i.instructor_email}</Card.Title>
-                        
+                        <h1>{i.name}</h1>
                                     </Card.Body>
                                 </Card>
                             </Col>
