@@ -7,6 +7,7 @@ import useAuth from "../../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { Button } from 'react-bootstrap';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const CheckoutForm = () => {
     const [error, setError] = useState('');
@@ -18,6 +19,8 @@ const CheckoutForm = () => {
     const { user } = useAuth();
     const [cart, refetch] = useCart();
     const navigate = useNavigate();
+
+   const{_id, coursesID ,name,instructor_name,image,price}=cart
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0)
 
@@ -86,21 +89,42 @@ const CheckoutForm = () => {
                     transactionId: paymentIntent.id,
                     date: new Date(), // utc date convert. use moment js to 
                     cartIds: cart.map(item => item._id),
-                    menuItemIds: cart.map(item => item.menuId),
+                    courseIds: cart.map(item => item.coursesID),
                     status: 'pending'
                 }
 
                 const res = await axiosSecure.post('/payments', payment);
                 console.log('payment saved', res.data);
+
+                const enrolledClass ={
+                    cartIds: _id,
+                    courseIds: coursesID,
+                    email: user.email,
+                    name:name,
+                    instructor:instructor_name,
+                    image: image,
+                    price:price
+                }
+                console.log(cart.name)
+                const enrolledRes = await axiosSecure.post('/enrolled-courses', enrolledClass);
+                console.log('Enrolled Course', enrolledRes.data);
+
+
+
+
                 refetch();
                 if (res.data?.paymentResult?.insertedId) {
+                   
+                    
+                  
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: "Thank you for the taka paisa",
+                        title: "Thank you for PAYMENT",
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    
                     navigate('/dashboard/paymentHistory')
                 }
 

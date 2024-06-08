@@ -5,32 +5,31 @@ import banner2 from '../../../../assets/banner/2.jpg'
 import banner3 from '../../../../assets/banner/3.jpg'
 import banner4 from '../../../../assets/banner/4.jpg'
 import banner5 from '../../../../assets/banner/5.jpg'
-import { Container } from 'react-bootstrap';
+
 
 const Banner = () => {
     return (
        
-    
 
 <Carousel>
                     <Carousel.Item>
-                        <img src={banner1} width={'1350px'}  height={'500px'}/>
+                        <img src={banner1}   height={'500px'} className='w-100'/>
                     </Carousel.Item>
 
                     <Carousel.Item>
-                        <img src={banner2} width={'1350px'} height={'500px'} />   
+                        <img src={banner2}  height={'500px'} className='w-100' />   
                     </Carousel.Item>
 
                     <Carousel.Item>
-                        <img src={banner3} width={'1350px'} height={'500px'} />    
+                        <img src={banner3}  height={'500px'} className='w-100' />    
                     </Carousel.Item>
 
                     <Carousel.Item>
-                        <img src={banner4} width={'1350px'} height={'500px'} />   
+                        <img src={banner4}  height={'500px'} className='w-100' />   
                     </Carousel.Item>
 
                     <Carousel.Item>
-                        <img src={banner5} width={'1350px'} height={'500px'} />    
+                        <img src={banner5}  height={'500px'} className='w-100'/>    
                     </Carousel.Item>
                 </Carousel>
      

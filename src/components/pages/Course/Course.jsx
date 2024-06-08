@@ -30,7 +30,7 @@ const Course = () => {
          if (user && user.email) {
               //send cart item to the database
               const cartItem = {
-                  classID: cls._id,
+                  coursesID: cls._id,
                   email: user.email,
                   name:cls.name,
                   instructor:cls.instructor_name,

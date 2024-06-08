@@ -19,6 +19,8 @@ import MyClasses from "../components/pages/Dashboard/Instructor/MyClasses";
 import AddCourse from "../components/pages/Dashboard/Instructor/AddCourse";
 import ManageClass from "../components/pages/Dashboard/Admin/ManageClass";
 import Payment from "../components/pages/Dashboard/Student/Payment/Payment";
+import PaymentHistory from "../components/pages/Dashboard/Student/Payment/PaymentHistory";
+import EnrolledCourse from "../components/pages/Dashboard/Student/EnrolledCourse";
 
 const router = createBrowserRouter([
     {
@@ -86,8 +88,16 @@ const router = createBrowserRouter([
           element:<PrivateRoute><MySelectedCourse></MySelectedCourse></PrivateRoute>
         },
         {
+          path:"enrolledCourse",
+          element:<PrivateRoute><EnrolledCourse></EnrolledCourse></PrivateRoute>
+        },
+        {
           path:"payment",
           element:<PrivateRoute><Payment></Payment></PrivateRoute>
+        },
+        {
+          path:"paymentHistory",
+          element:<PrivateRoute><PaymentHistory></PaymentHistory></PrivateRoute>
         },
       ]
     }

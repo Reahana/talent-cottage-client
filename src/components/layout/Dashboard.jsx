@@ -45,8 +45,8 @@ const Dashboard = () => {
                         <Nav className="flex-column  pt-5 sideNav ">
                           <ActiveLink  to='/dashboard/studentHome' ><FaHouse /> Dashboard</ActiveLink><br/>
                           <ActiveLink   to='/dashboard/selectedCourse' > <FaChalkboard /> My Selected Course</ActiveLink><br/>
-                          <ActiveLink to='/' ><FaLaptopCode /> My Enrolled Classes</ActiveLink><br/>
-                          <ActiveLink  to='/' ><FaCreditCard /> Payment History</ActiveLink>
+                          <ActiveLink to='/dashboard/enrolledCourse' ><FaLaptopCode /> My Enrolled Course</ActiveLink><br/>
+                          <ActiveLink  to='/dashboard/paymentHistory' ><FaCreditCard /> Payment History</ActiveLink>
                         </Nav>
                       </Col> 
                     }

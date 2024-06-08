@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const MySelectedCourse = () => {
     const [cart,refetch]= useCart();
     const axiosSecure = useAxiosSecure();
+    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
     const handleDeleteClass = cart => {
         Swal.fire({
@@ -38,8 +39,9 @@ const MySelectedCourse = () => {
       }
     return (
         <div>
-            <div className='d-flex justify-content-between mb-3 mt-3' >
-                <h1>Selected Classes: {cart.length}</h1>
+            <div className='d-flex justify-content-between mb-4 mt-5' >
+                <h2>Selected Classes: {cart.length}</h2>
+                <h2>Total Price: {totalPrice}</h2>
                 
                <Link to='/dashboard/payment'>
                <Button className='fs-4' variant='warning'>Pay</Button>
