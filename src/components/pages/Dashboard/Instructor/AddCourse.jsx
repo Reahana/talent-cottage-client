@@ -30,7 +30,7 @@ const AddCourse = () => {
                 name: data.name,
                 instructor_name: user.displayName,
                 instructor_email:user.email,
-                seats: data.seats,
+                seats: parseInt(data.seats),
                 price: parseFloat(data.price),
                 image: res.data.data.display_url,
                 students: 0

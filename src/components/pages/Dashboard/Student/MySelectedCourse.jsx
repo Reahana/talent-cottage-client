@@ -5,13 +5,15 @@ import { Button, Table } from 'react-bootstrap';
 import { FaTrashAlt } from 'react-icons/fa';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const MySelectedCourse = () => {
     const [cart,refetch]= useCart();
     const axiosSecure = useAxiosSecure();
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    const {user} = useAuth(); 
 
-    const handleDeleteClass = cart => {
+    const handleDeleteClass = cls => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -23,7 +25,7 @@ const MySelectedCourse = () => {
         }).then((result) => {
             if (result.isConfirmed) {
       
-                axiosSecure.delete(`/carts/${user._id}`)
+                axiosSecure.delete(`/carts/${cls._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch();
@@ -74,7 +76,7 @@ const MySelectedCourse = () => {
               
                                 <td>
          <button
-              onClick={() => handleDeleteClass(cart)}
+              onClick={() => handleDeleteClass(cls)}
               className="btn btn-lg">
               <FaTrashAlt className="text-danger"></FaTrashAlt>
           </button>

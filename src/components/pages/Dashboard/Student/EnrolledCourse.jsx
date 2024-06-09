@@ -27,10 +27,10 @@ const EnrolledCourse = () => {
               
                 <Col key={cls._id} className='g-5' sm={12} md={6} >
                     <Card className='h-100'>
-                        <Card.Img variant="top" src={cls.image[0]} height={'200px'} />
+                        <Card.Img variant="top" src={cls.image} height={'200px'} />
                         <Card.Body>
-                            <Card.Title className='fs-1'>{cls.name[0]}</Card.Title>
-                            <Card.Title className='fs-2 text-primary'>Instructor: {cls.instructor[0]}</Card.Title>
+                            <Card.Title className='fs-1'>{cls.name}</Card.Title>
+                            <Card.Title className='fs-2 text-primary'>Instructor: {cls.instructor}</Card.Title>
                         </Card.Body>
                     </Card>
                </Col>

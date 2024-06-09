@@ -20,8 +20,8 @@ const CheckoutForm = () => {
     const [cart, refetch] = useCart();
     const navigate = useNavigate();
 
-
-
+    const courseName = cart.map(item => item.name)
+    console.log(courseName[0]);
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0)
 
@@ -97,19 +97,22 @@ const CheckoutForm = () => {
                 const res = await axiosSecure.post('/payments', payment);
                 console.log('payment saved', res.data);
 
+               
                 const enrolledClass ={
                     courseIds: cart.map(item => item.coursesID),
                     email: user.email,
-                    name:cart.map(item => item.name),
+                    name:courseName.name,
                     instructor:cart.map(item => item.instructor),
                     image: cart.map(item => item.image),
                     
                 }
+              
                 
                 const enrolledRes = await axiosSecure.post('/enrolled-courses', enrolledClass);
                 console.log('Enrolled Course', enrolledRes.data);
 
-                axiosSecure.put(`/class/${cart.map(item => item._id)}`)
+                const  studentRes =axiosSecure.patch(`/class/${cart.map(item => item.coursesID)}`)
+                console.log('student',studentRes);
 
 
                 refetch();
