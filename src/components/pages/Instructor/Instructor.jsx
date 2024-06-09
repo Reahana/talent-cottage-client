@@ -3,11 +3,11 @@ import useAllInstructor from '../../hooks/useAllInstructor';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import useAllClass from '../../hooks/useAllClass';
+import useUser from '../../hooks/useUser';
 
 
 const Instructor = () => {
     const [allInstructors]= useAllInstructor();
-   
    
     return (
         <div>
@@ -25,7 +25,7 @@ const Instructor = () => {
                                     <Card.Body>
                                     <Card.Title  className='fs-2'>  {i.instructor_name}</Card.Title>
                                     <Card.Title > Email: {i.instructor_email}</Card.Title>
-                        <h1>{i.name}</h1>
+                      
                                     </Card.Body>
                                 </Card>
                             </Col>
