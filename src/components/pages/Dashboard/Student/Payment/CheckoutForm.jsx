@@ -7,7 +7,7 @@ import useAuth from "../../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { Button } from 'react-bootstrap';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+
 
 const CheckoutForm = () => {
     const [error, setError] = useState('');
@@ -20,7 +20,8 @@ const CheckoutForm = () => {
     const [cart, refetch] = useCart();
     const navigate = useNavigate();
 
-   const{_id, coursesID ,name,instructor_name,image,price}=cart
+
+
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0)
 
@@ -97,19 +98,18 @@ const CheckoutForm = () => {
                 console.log('payment saved', res.data);
 
                 const enrolledClass ={
-                    cartIds: _id,
-                    courseIds: coursesID,
+                    courseIds: cart.map(item => item.coursesID),
                     email: user.email,
-                    name:name,
-                    instructor:instructor_name,
-                    image: image,
-                    price:price
+                    name:cart.map(item => item.name),
+                    instructor:cart.map(item => item.instructor),
+                    image: cart.map(item => item.image),
+                    
                 }
-                console.log(cart.name)
+                
                 const enrolledRes = await axiosSecure.post('/enrolled-courses', enrolledClass);
                 console.log('Enrolled Course', enrolledRes.data);
 
-
+                axiosSecure.put(`/class/${cart.map(item => item._id)}`)
 
 
                 refetch();

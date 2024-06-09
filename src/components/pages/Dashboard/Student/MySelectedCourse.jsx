@@ -42,8 +42,7 @@ const MySelectedCourse = () => {
             <div className='d-flex justify-content-between mb-4 mt-5' >
                 <h2>Selected Classes: {cart.length}</h2>
                 <h2>Total Price: {totalPrice}</h2>
-                
-               <Link to='/dashboard/payment'>
+                <Link to='/dashboard/payment'>
                <Button className='fs-4' variant='warning'>Pay</Button>
                </Link>
             </div>
@@ -71,6 +70,8 @@ const MySelectedCourse = () => {
                                 <td>{cls.name}</td>
                                 <td>{cls.instructor}</td>
                                 <td>{cls.price}</td>
+                               
+              
                                 <td>
          <button
               onClick={() => handleDeleteClass(cart)}
